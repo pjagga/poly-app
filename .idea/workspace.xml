@@ -25,8 +25,8 @@
       <file leaf-file-name="my-view1.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/my-view1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+            <state relative-caret-position="276">
+              <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="my-icons.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/my-icons.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="330">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
@@ -65,8 +65,8 @@
       <file leaf-file-name="my-view3.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/my-view3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-27">
-              <caret line="93" column="66" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+            <state relative-caret-position="106">
+              <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="52" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -683,12 +683,12 @@
       <workItem from="1466691125827" duration="19558000" />
       <workItem from="1467010620747" duration="143000" />
       <workItem from="1467082344663" duration="1186000" />
-      <workItem from="1467087931115" duration="21516000" />
+      <workItem from="1467087931115" duration="21881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55461000" />
+    <option name="totallyTimeSpent" value="55826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="6" />
@@ -1107,14 +1107,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my-view3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="93" column="66" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/my-app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1133,16 +1125,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/my-icons.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="330">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/my-view3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="52" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/my-view1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        <state relative-caret-position="276">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
           <folding />
         </state>
       </provider>

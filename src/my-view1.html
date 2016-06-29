@@ -75,6 +75,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 color: #212121;
             }
 
+            .pink:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #0a3142;
+            }
+
+            .bookmark:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #0a3142;
+            }
+            .share:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #0a3142;
+            }
+
         </style>
 
         <div class="card">
@@ -93,8 +107,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                            </div>
                            <div class="video-card-actions horizontal justified">
                             <paper-icon-button icon="favorite" class="pink"></paper-icon-button>
-                               <paper-icon-button icon="bookmark"></paper-icon-button>
-                               <paper-icon-button icon="share"></paper-icon-button>
+                               <paper-icon-button icon="bookmark" class="bookmark"></paper-icon-button>
+                               <paper-icon-button icon="share" class="share"></paper-icon-button>
                            </div>
                    </paper-card>
                </a>

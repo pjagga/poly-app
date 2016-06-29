@@ -1,0 +1,135 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="my-view3">
+
+    <template>
+
+        <style>
+            :host {
+                display: block;
+                padding: 10px;
+            }
+
+            .card {
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                padding: 16px;
+                margin: 24px;
+                border-radius: 5px;
+                background-color: #fff;
+                color: #757575;
+            }
+
+            .circle {
+                display: inline-block;
+                height: 64px;
+                width: 64px;
+                border-radius: 50%;
+                background: #ddd;
+                line-height: 64px;
+                font-size: 30px;
+                color: #555;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 22px;
+                margin: 16px 0;
+                color: #212121;
+            }
+
+            .container:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #0a3142;
+            }
+
+            .container:not([style-scope]):not(.style-scope) {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0.5em;
+                border-radius: 5px;
+                border: 3px solid transparent;
+                cursor: pointer;
+                width: 30px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            .paper-dialog{
+                border: 2px solid;
+                border-color: #4caf50;
+                z-index: 103;
+                top: 98.2031px;
+                content: 20px;
+                display: block;
+                height: 300px;
+                width: 800px;
+                margin: 24px 40px;
+            }
+            .paper-dialog .paper .buttons{
+                opacity: .6;
+                position: relative;
+                top: 1px;
+            }
+            h3{
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 28px;
+            }
+
+        </style>
+
+        <div class="card">
+            <iron-icon class="circle" src="../images/knitting-icon.png"></iron-icon>
+            <h1>Knitting Videos with PJ</h1>
+            <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+        <span class="container">
+           <iron-icon icon="add-a-photo" on-click="addVideo" class="addIcon">
+           </iron-icon>
+      </span>
+            Upload Video
+        </div>
+        <paper-dialog id="dialog" class="paper-dialog">
+            <div class="paper">
+                <div class="buttons">
+                        <iron-icon icon="close" dialog-dismiss></iron-icon>
+                </div>
+                <div>
+                    <paper-input label="Title"></paper-input>
+                    <paper-input label="Description">
+                        <iron-autogrow-textarea rows="1" autocomplete="off"></iron-autogrow-textarea>
+                    </paper-input>
+                    <paper-input type="File"></paper-input>
+                    <paper-button label="Send" raisedButton></paper-button>
+                    <!--on-click="{{sendData}}"-->
+                </div>
+            </div>
+        </paper-dialog>
+    </template>
+
+    <script>
+
+        Polymer({
+
+            is: 'my-view3',
+            addVideo: function () {
+                console.log("Hello Dialog");
+               this.$.dialog.toggle();
+            }
+
+        });
+
+    </script>
+
+</dom-module>

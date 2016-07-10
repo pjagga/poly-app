@@ -73,11 +73,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
         <div class="horizontal">
-            <template is="dom-repeat" items='[1,2,3,4,5]' as="recipe">
+            <template is="dom-repeat" items='{{videos}}'>
                 <a class="flex-none">
                     <paper-card class="video-card">
                         <google-youtube
-                                video-id="q1-hOS4qAj8"
+                                video-id={{item.id}}
                                 class="video"
                                 height="270px"
                                 width="480px"
@@ -104,7 +104,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         Polymer({
 
-            is: 'my-view1'
+            is: 'my-view1',
+            ready: function() {
+                this.videos = [
+                    {id: 'q1-hOS4qAj8'},
+                    {id: 'bLcIeD5GOss'},
+                    {id:'FmM9B9iUFDM'},
+                    {id:'zxFNreWenhg'},
+                    {id:'RR4K6Ma3Sc4'}
+                ];
+            }
 
         });
 

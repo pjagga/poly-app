@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
 
 <dom-module id="my-view1" is="custom-style">
 
@@ -41,33 +42,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 text-align: center;
             }
 
-            .justified:not([style-scope]):not(.style-scope) {
-                -webkit-justify-content: space-between;
-                justify-content: space-between;
-                display:flex;
-            }
-
-            .horizontal{
-                display: flex;
-                flex-direction: row;
-                padding-left: 16px
-            }
-
             .video-card {
-                height: 250px;
-                width: 200px;
-                padding:10px;
+                padding: 10px;
                 cursor: pointer;
-                margin: 13px;
-                box-shadow: 0 5px 15px 0 rgba(0,0,0,0.25);
+                margin: 26px;
+                box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
 
             }
 
-            .iron-image{
-                --iron-image-height: 100%;
-                --iron-image-width: 100%;
+            .heart:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #FF0000;
             }
-
+            .bookmark:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #00FF00;
+            }
+            .share:not([style-scope]):not(.style-scope):hover {
+                border: 3px solid #eceff1;
+                color: #0000FF;
+            }
 
             h1 {
                 font-size: 22px;
@@ -75,45 +69,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 color: #212121;
             }
 
-            .pink:not([style-scope]):not(.style-scope):hover {
-                border: 3px solid #eceff1;
-                color: #0a3142;
-            }
-
-            .bookmark:not([style-scope]):not(.style-scope):hover {
-                border: 3px solid #eceff1;
-                color: #0a3142;
-            }
-            .share:not([style-scope]):not(.style-scope):hover {
-                border: 3px solid #eceff1;
-                color: #0a3142;
-            }
-
         </style>
 
-        <div class="card">
-            <div class="circle">1</div>
-            <h1>Home</h1>
-            <p>Latest Videos</p>
+
+        <div class="horizontal">
+            <template is="dom-repeat" items='[1,2,3,4,5]' as="recipe">
+                <a class="flex-none">
+                    <paper-card class="video-card">
+                        <google-youtube
+                                video-id="q1-hOS4qAj8"
+                                class="video"
+                                height="270px"
+                                width="480px"
+                                rel="0"
+                                start="5"
+                                autoplay="0">
+                        </google-youtube>
+                        <div class="container">
+                            <paper-icon-button icon="favorite" class="heart"></paper-icon-button>
+                            <paper-icon-button icon="bookmark" class="bookmark"></paper-icon-button>
+                            <paper-icon-button icon="share" class="share"></paper-icon-button>
+                        </div>
+
+                    </paper-card>
+                </a>
+            </template>
 
         </div>
-
-       <div class="horizontal">
-           <template is="dom-repeat" items='[1,2,3,4,5]' as="Recipes">
-               <a class="flex-none">
-                   <paper-card class="video-card">
-                           <div class="card-content">
-                               <iron-image class="iron-image" src="../images/iron-images.jpg"></iron-image>
-                           </div>
-                           <div class="video-card-actions horizontal justified">
-                            <paper-icon-button icon="favorite" class="pink"></paper-icon-button>
-                               <paper-icon-button icon="bookmark" class="bookmark"></paper-icon-button>
-                               <paper-icon-button icon="share" class="share"></paper-icon-button>
-                           </div>
-                   </paper-card>
-               </a>
-           </template>
-       </div>
 
 
     </template>

@@ -136,6 +136,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 border: 3px solid #eceff1;
                 color: #00FF00;
             }
+
+            .bookmark.active:not([style-scope]):not(.style-scope) {
+                color: #FF0000;
+            }
+
             .share:not([style-scope]):not(.style-scope):hover {
                 border: 3px solid #eceff1;
                 color: #0000FF;
@@ -164,9 +169,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                                 autoplay="0">
                         </google-youtube>
                         <div class="container">
-                            <paper-icon-button icon="favorite" on-click="{{handleTap}}" class="heart" id="v" on-keypress="{{ doClick }}"></paper-icon-button>
-                            Did you like it !!!
-                            <paper-icon-button icon="bookmark" class="bookmark"></paper-icon-button>
+                            <paper-icon-button icon="favorite" on-tap="handleTap" class="heart" id="v" on-keypress="{{ doClick }}"></paper-icon-button>
+                            {{ item.likeText }}
+                            <paper-icon-button on-tap="bookmark" icon="bookmark" class="bookmark"></paper-icon-button>
                             <paper-icon-button icon="share" class="share"></paper-icon-button>
                         </div>
 
@@ -180,6 +185,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
 
     <script>
+        function likedText(liked) {
+            if(liked) {
+                return 'You liked it !!!'
+            } else {
+                return 'Did you like it !!!'
+            }
+        }
 
         Polymer({
             count : 2,
@@ -192,13 +204,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     {id: 'zxFNreWenhg'},
                     {id: 'RR4K6Ma3Sc4'}
                 ];
+
+                this.videos.forEach(function(video) {
+                    video.bookmarked = false;
+                    video.liked = false;
+                    video.likeText = likedText(false);
+                })
             },
-            listeners: {
-                'tap': 'handleTap'
+            bookmark: function(e, stuff) {
+                e.model.item.bookmarked = !e.model.item.bookmarked;
+                stuff.sourceEvent.target.active = true
+                stuff.sourceEvent.target.classList.add('active')
+                debugger
             },
-            handleTap: function(event, details) {
-                console.log("open page called item "+ event.target);
-                return this.$.v;
+            handleTap: function(e) {
+                var liked = !e.model.item.liked;
+                var text = likedText(liked)
+                this.set('videos.' + e.model.index + '.liked', liked)
+                this.set('videos.' + e.model.index + '.likeText', text)
             },
 //            doClick: function(event, detail, sender) {
 //                console.log('Keypress event triggered');

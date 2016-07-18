@@ -51,6 +51,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border: 3px solid #eceff1;
         color: #0a3142;
       }
+      .upload-detail {
+        color: #000000;
+        visibility: hidden;
+      }
+      .upload:hover{
+        cursor: pointer;
+      }
+      .upload:hover .upload-detail {
+        position: relative;
+        visibility: visible;
+      }
 
       .container:not([style-scope]):not(.style-scope) {
         display: flex;
@@ -82,6 +93,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         position: relative;
         top: 1px;
       }
+      /*.upload-detail .upload{*/
+      /*float: right;*/
+      /*}*/
       h3{
         font-size: 20px;
         font-weight: 500;
@@ -110,8 +124,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-input label="Description">
             <iron-autogrow-textarea rows="1" autocomplete="off"></iron-autogrow-textarea>
           </paper-input>
-          <paper-input type="File"></paper-input>
-          <paper-button label="Send" raisedButton></paper-button>
+            <paper-input id="the-file-input" type="file">
+            </paper-input>
+          <div class="upload">
+            <iron-icon icon="file-upload" on-click="upload"></iron-icon>
+            <div class="upload-detail">Upload</div>
+          </div>
           <!--on-click="{{sendData}}"-->
         </div>
       </div>

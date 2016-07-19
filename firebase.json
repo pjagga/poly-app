@@ -3,7 +3,18 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public",
+    "public": ".",
+    "ignore": [
+      "polymer.json",
+      "firebase.json",
+      "**/node_modules/**",
+      "**/test/**",
+      "*.log",
+      ".gitignore",
+      ".firebaserc",
+      ".bower.json",
+      ".database.rules.json"
+    ],
     "rewrites": [
       {
         "source": "**",
